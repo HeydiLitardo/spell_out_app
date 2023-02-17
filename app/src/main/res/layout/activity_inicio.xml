@@ -6,4 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".Inicio">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="75dp"
+
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <ImageView
+                android:id="@+id/alumnos"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:background="@drawable/selector_button"
+                android:layout_margin="16dp"
+                android:src="@drawable/baseline_people_24" />
+
+            <ImageView
+                android:id="@+id/crear_actividad"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/selector_button"
+                android:layout_margin="16dp"
+                android:src="@drawable/baseline_create_24" />
+
+            <ImageView
+                android:id="@+id/notas"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:background="@drawable/selector_button"
+                android:layout_margin="16dp"
+                android:src="@drawable/baseline_edit_note_24" />
+
+            <ImageView
+                android:id="@+id/asignar_actividad"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/selector_button"
+                android:layout_margin="16dp"
+                android:src="@drawable/baseline_assignment_ind_24" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btn_registrar_alumnos"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Registrar alumnos" />
+
+        <Button
+            android:id="@+id/btn_atras"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Atras" />
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
