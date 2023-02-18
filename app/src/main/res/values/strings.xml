@@ -15,4 +15,5 @@
     <string name="login_button_text">Iniciar Sesión</string>
     <string name="correo_electr_nico">Correo electrónico</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="titulo_alumnos">Lista de Alumnos</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.spellout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,8 +8,6 @@ import android.widget.ImageView
 import com.google.android.material.bottomappbar.BottomAppBar
 
 class Inicio : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +23,8 @@ class Inicio : AppCompatActivity() {
         val btnAtras = findViewById<Button>(R.id.btn_atras)
 
         alumnos.setOnClickListener {
-
+            val intent = Intent(this, Alumnos::class.java)
+            startActivity(intent)
         }
 
         crearActividad.setOnClickListener {
