@@ -17,64 +17,16 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.ktx.initialize
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        private const val RC_SIGN_IN = 423
-    }
-
-    private val authUser: FirebaseAuth by lazy {
-        FirebaseAuth.getInstance()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Firebase.initialize(this)
-        googleLogin()
 
-        val btnIniciar = findViewById<Button>(R.id.btn_iniciar_sesion)
-        btnIniciar.setOnClickListener {
-            startActivity(Intent(this, Inicio::class.java))
-        }
-
-        val btnRegistrar = findViewById<Button>(R.id.btn_registrar)
-        btnRegistrar.setOnClickListener {
-            startActivity(Intent(this, RegistrarUsuario::class.java))
-        }
-
+        startActivity(Intent(this, Login::class.java))
+        finish()
     }
 
-    fun googleLogin() {
-        val btnLogin = findViewById<SignInButton>(R.id.btn_login_google)
-        val providers: ArrayList<AuthUI.IdpConfig> = arrayListOf(
-            AuthUI.IdpConfig.GoogleBuilder().build()
-        )
-        btnLogin.setOnClickListener {
-            startActivityForResult(
-                AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .build(),
-                RC_SIGN_IN
-            )
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RC_SIGN_IN) {
-            val response = IdpResponse.fromResultIntent(data)
-
-            if (resultCode == Activity.RESULT_OK) {
-                var user = FirebaseAuth.getInstance().currentUser
-                Toast.makeText(this, "Bienvenido ${user!!.displayName}", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, Inicio::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, "Ocurrio un herror ${response!!.error!!.errorCode}", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
 
 }

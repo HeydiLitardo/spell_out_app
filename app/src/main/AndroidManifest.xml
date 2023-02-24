@@ -14,11 +14,7 @@
         <activity
             android:name=".RegistrarUsuario"
             android:exported="false" />
-        <activity
-            android:name=".Registrar"
-            android:exported="false"
-            android:label="@string/title_activity_registrar"
-            android:theme="@style/Theme.SpellOut.NoActionBar" />
+
         <activity
             android:name=".Login"
             android:exported="false" />
